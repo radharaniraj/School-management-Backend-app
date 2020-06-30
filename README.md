@@ -9,3 +9,19 @@ Steps to build this app
 3. Run `node .` to start the application.
 
 The project is also hosted on heroku [School App Backend](https://schoolmanageapi.herokuapp.com/explorer/).
+
+### Models in the App
+- Homework
+- Student
+- Teacher
+- Class
+- Complaint
+- Attendance
+- Announcement
+- Holidays
+
+### Roles in the app
+- Students
+- Teachers
+- Admin
+

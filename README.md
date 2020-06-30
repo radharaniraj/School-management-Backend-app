@@ -5,7 +5,7 @@ view it in their application.
 
 Steps to build this app
 1. Clone this repo
-2. Set up your db credentials in `datasources.json`
+2. Set up your db credentials in `server/datasources.json`
 3. Run `npm install` to install all dependencies
 4. Run `node .` to start the application.
 

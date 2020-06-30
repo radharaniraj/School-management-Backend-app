@@ -1,0 +1,76 @@
+{
+  "name": "Class",
+  "plural": "classes",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "className": {
+      "type": "string",
+      "required": true
+    },
+    "classTeacherID": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "homework": {
+      "type": "hasMany",
+      "model": "Homework",
+      "foreignKey": "classId"
+    },
+    "students": {
+      "type": "hasMany",
+      "model": "Student",
+      "foreignKey": "classId"
+    },
+    "fee": {
+      "type": "hasMany",
+      "model": "fee",
+      "foreignKey": "classId"
+    }
+  },
+  "acls": [
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "teacher",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "WRITE",
+      "principalType": "ROLE",
+      "principalId": "teacher",
+      "permission": "DENY"
+    },
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "admin",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "WRITE",
+      "principalType": "ROLE",
+      "principalId": "admin",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$unauthenticated",
+      "permission": "DENY"
+    },
+    {
+      "accessType": "WRITE",
+      "principalType": "ROLE",
+      "principalId": "student",
+      "permission": "DENY"
+    }
+  ],
+  "methods": {}
+}

@@ -1,0 +1,54 @@
+{
+  "name": "Complaint",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "complaint_message": {
+      "type": "string",
+      "required": true
+    },
+    "complaintDate": {
+      "type": "date",
+      "required": true
+    },
+    "teacherId": {
+      "type": "number",
+      "required": true
+    },
+    "studentId": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "teachers": {
+      "type": "belongsTo",
+      "model": "Teacher",
+      "foreignKey": "teacherId"
+    },
+    "students": {
+      "type": "belongsTo",
+      "model": "Student",
+      "foreignKey": "studentId"
+    }
+  },
+  "acls": [
+    {
+      "accessType": "WRITE",
+      "principalType": "ROLE",
+      "principalId": "student",
+      "permission": "DENY"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$unauthenticated",
+      "permission": "DENY"
+    }
+  ],
+  "methods": {}
+}

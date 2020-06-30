@@ -1,0 +1,72 @@
+{
+  "name": "Homework",
+  "plural": "homeworks",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "classId": {
+      "type": "number",
+      "required": true
+    },
+    "teacherId": {
+      "type": "number",
+      "required": true
+    },
+    "subjectId": {
+      "type": "number",
+      "required": true
+    },
+    "hwDescription": {
+      "type": "string",
+      "required": true,
+      "default": "No H.w"
+    },
+    "Date": {
+      "type": "date",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "teachers": {
+      "type": "belongsTo",
+      "model": "Teacher",
+      "foreignKey": "teacherId"
+    },
+    "subjects": {
+      "type": "belongsTo",
+      "model": "Subject",
+      "foreignKey": "subjectId"
+    }
+  },
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$unauthenticated",
+      "permission": "DENY"
+    },
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "student",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "WRITE",
+      "principalType": "ROLE",
+      "principalId": "student",
+      "permission": "DENY"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$owner",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {}
+}

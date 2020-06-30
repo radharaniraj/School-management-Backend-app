@@ -1,0 +1,38 @@
+{
+  "name": "school-api",
+  "version": "1.0.0",
+  "main": "server/server.js",
+  "engines": {
+    "node": "10.18.1",
+    "npm": "6.13.4"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "start": "node .",
+    "posttest": "npm run lint && nsp check",
+    "heroku-postbuild": "npm install --production"
+  },
+  "dependencies": {
+    "compression": "^1.0.3",
+    "cors": "^2.5.2",
+    "dotenv": "^8.2.0",
+    "helmet": "^3.11.0",
+    "loopback": "^3.22.0",
+    "loopback-boot": "^2.6.5",
+    "loopback-component-explorer": "^6.0.0",
+    "loopback-connector-postgresql": "^2.9.0",
+    "serve-favicon": "^2.0.1",
+    "strong-error-handler": "^2.0.0",
+    "swagger-ui": "^3.26.2"
+  },
+  "devDependencies": {
+    "eslint": "^3.17.1",
+    "eslint-config-loopback": "^8.0.0"
+  },
+  "repository": {
+    "type": "",
+    "url": ""
+  },
+  "license": "UNLICENSED",
+  "description": "school-api"
+}

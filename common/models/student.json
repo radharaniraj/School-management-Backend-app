@@ -1,0 +1,72 @@
+{
+  "name": "Student",
+  "plural": "students",
+  "base": "User",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "fathersName": {
+      "type": "string"
+    },
+    "classId": {
+      "type": "number",
+      "required": true
+    },
+    "rollNumber": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "classDetail": {
+      "type": "belongsTo",
+      "model": "Class",
+      "foreignKey": "classId"
+    },
+    "attendances": {
+      "type": "hasMany",
+      "model": "Attendance",
+      "foreignKey": "studentId"
+    },
+    "complaint": {
+      "type": "hasMany",
+      "model": "Complaint",
+      "foreignKey": "studentId"
+    },
+    "fee": {
+      "type": "hasMany",
+      "model": "fee",
+      "foreignKey": "studentId"
+    }
+  },
+  "acls": [
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$owner",
+      "permission": "ALLOW",
+      "property": "__get__attendances"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$owner",
+      "permission": "ALLOW",
+      "property": "__get__complaint"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$owner",
+      "permission": "ALLOW",
+      "property": "__count__complaint"
+    }
+  ],
+  "methods": {}
+}

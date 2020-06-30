@@ -1,0 +1,79 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "User": {
+    "dataSource": "postgres",
+    "public": false
+  },
+  "AccessToken": {
+    "dataSource": "postgres",
+    "public": false
+  },
+  "ACL": {
+    "dataSource": "postgres",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "postgres",
+    "public": false,
+    "options": {
+      "strictObjectIDCoercion": true
+    }
+  },
+  "Role": {
+    "dataSource": "postgres",
+    "public": false
+  },
+  "Student": {
+    "dataSource": "postgres",
+    "public": true
+  },
+  "Teacher": {
+    "dataSource": "postgres",
+    "public": true
+  },
+  "Class": {
+    "dataSource": "postgres",
+    "public": true
+  },
+  "Attendance": {
+    "dataSource": "postgres",
+    "public": true
+  },
+  "Subject": {
+    "dataSource": "postgres",
+    "public": true
+  },
+  "Homework": {
+    "dataSource": "postgres",
+    "public": true
+  },
+  "Complaint": {
+    "dataSource": "postgres",
+    "public": true
+  },
+  "Announcement": {
+    "dataSource": "postgres",
+    "public": true
+  },
+  "fee": {
+    "dataSource": "postgres",
+    "public": true
+  },
+  "holidays": {
+    "dataSource": "postgres",
+    "public": true
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "name": "fee",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "studentId": {
+      "type": "number",
+      "required": true
+    },
+    "classId": {
+      "type": "number",
+      "required": true
+    },
+    "accountantId": {
+      "type": "number",
+      "required": true
+    },
+    "duesAmount": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "student": {
+      "type": "belongsTo",
+      "model": "Student",
+      "foreignKey": "studentId"
+    },
+    "class": {
+      "type": "belongsTo",
+      "model": "Class",
+      "foreignKey": "classId"
+    },
+    "teacher": {
+      "type": "belongsTo",
+      "model": "Teacher",
+      "foreignKey": "accountantId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

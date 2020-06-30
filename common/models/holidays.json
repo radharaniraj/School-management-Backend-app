@@ -1,0 +1,26 @@
+{
+  "name": "holidays",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "holidayName": {
+      "type": "string",
+      "required": true
+    },
+    "fromDate": {
+      "type": "date",
+      "required": true
+    },
+    "toDate": {
+      "type": "date",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

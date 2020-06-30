@@ -1,0 +1,15 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "postgres": {
+    "host": "localhost",
+    "port": "5432",
+    "database": "school-manage",
+    "password": "radha123",
+    "name": "postgres",
+    "user": "radhauser",
+    "connector": "postgresql"
+  }
+}

@@ -5,8 +5,9 @@ view it in their application.
 
 Steps to build this app
 1. Clone this repo
-2. Run `npm install` to install all dependencies
-3. Run `node .` to start the application.
+2. Set up your db credentials in `db-config.js`
+3. Run `npm install` to install all dependencies
+4. Run `node .` to start the application.
 
 The project is also hosted on heroku [School App Backend](https://schoolmanageapi.herokuapp.com/explorer/).
 
